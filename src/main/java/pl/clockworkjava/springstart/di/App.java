@@ -1,4 +1,4 @@
-package pl.clockworkjava.di;
+package pl.clockworkjava.springstart.di;
 
 public class App {
     public static void main(String[] args) {
