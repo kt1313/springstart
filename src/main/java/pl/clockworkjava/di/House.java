@@ -9,7 +9,10 @@ public class House {
     House(Weather weather){
         windows.add(new Window(weather));
         windows.add(new Window(weather));
+    }
 
+    public void addWindow(Window window){
+        this.windows.add(window);
     }
     public void peek() {
 
