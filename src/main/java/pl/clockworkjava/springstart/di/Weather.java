@@ -3,7 +3,8 @@ package pl.clockworkjava.springstart.di;
 import org.springframework.stereotype.Component;
 
 import java.util.Random;
-@Component
+
+@Component("sunny")
 public class Weather {
 
     private static final Random random = new Random();

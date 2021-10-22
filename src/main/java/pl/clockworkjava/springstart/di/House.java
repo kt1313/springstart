@@ -1,26 +1,17 @@
 package pl.clockworkjava.springstart.di;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import javax.swing.plaf.PanelUI;
 import java.util.ArrayList;
 import java.util.List;
-
+@Component
 public class House {
-    List<Window> windows = new ArrayList<>();
-
-    House(Weather weather) {
-        windows.add(new Window(weather));
-        windows.add(new Window(weather));
-    }
-
-    public House() {
-    }
-
-    public void addWindow(Window window) {
-        this.windows.add(window);
-    }
+    @Autowired
+    List<Window> windows;
 
     public void peek() {
-
         windows.forEach(Window::peek);
     }
 }
