@@ -1,5 +1,6 @@
 package pl.clockworkjava.springstart;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import pl.clockworkjava.springstart.di.House;
@@ -12,14 +13,18 @@ import javax.net.ssl.HostnameVerifier;
 public class MyConfig {
 
     @Bean
-    public Window window1(Weather weather){
+    public Window window1(@Qualifier("sunny") Weather weather){
         return new Window( weather);
     }
 
     @Bean
-    public Window window2( Weather weather){
+    public Window window2( @Qualifier("rainy") Weather weather){
 
         return new Window(weather);
+    }
+    @Bean("rainy")
+    public Weather weather(){
+        return new Weather();
     }
 //@Bean
 //    public House house(){

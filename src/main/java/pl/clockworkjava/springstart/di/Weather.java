@@ -15,13 +15,13 @@ public class Weather {
         int i = random.nextInt(3) % 3;
         switch (i) {
             case 0:
-                description = "Swieci slonce";
+                description = "prazyyyy!";
                 break;
             case 1:
-                description = "Pada deszcz";
+                description = "lejeee!";
                 break;
             case 2:
-                description = "wieje wiatr";
+                description = "wichooor!";
                 break;
         }
     }

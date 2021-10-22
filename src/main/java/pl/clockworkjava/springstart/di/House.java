@@ -8,9 +8,13 @@ import java.util.ArrayList;
 import java.util.List;
 @Component
 public class House {
-    @Autowired
+
     List<Window> windows;
 
+    @Autowired
+public House(List<Window> windows){
+        this.windows=windows;
+    }
     public void peek() {
         windows.forEach(Window::peek);
     }
