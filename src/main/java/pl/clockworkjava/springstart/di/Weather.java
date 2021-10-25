@@ -13,6 +13,15 @@ public class Weather {
     public Weather() {
 
         int i = random.nextInt(3) % 3;
+
+        chooseWeather(i);
+    }
+
+    public Weather(int i) {
+        chooseWeather(i);
+    }
+
+    private void chooseWeather(int i) {
         switch (i) {
             case 0:
                 description = "prazyyyy!";
@@ -25,4 +34,5 @@ public class Weather {
                 break;
         }
     }
+
 }
