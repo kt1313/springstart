@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import pl.clockworkjava.springstart.di.House;
 import pl.clockworkjava.springstart.di.Weather;
 import pl.clockworkjava.springstart.di.Window;
+import pl.clockworkjava.springstart.di.homework.car.*;
 
 import javax.net.ssl.HostnameVerifier;
 import java.util.Arrays;
@@ -33,12 +34,33 @@ public class MyConfig {
     public Weather weather() {
         return new Weather();
     }
-@Bean
-    public List<Window> myWindows(@Qualifier("sunny")Weather weather){
+
+    @Bean
+    public List<Window> myWindows(@Qualifier("sunny") Weather weather) {
         return Arrays.asList(window1(weather), window2(weather));
     }
-//@Bean
-//    public House house(){
-//        return new House();
-//}
+    @Bean
+    public Wheel wheel() {
+        return new Wheel();
+    }
+    @Bean
+    public Engine engine(){
+        return new Engine();
+    }
+
+    @Bean
+    public Chassis chassis(){
+        return new Chassis();
+    }
+
+    @Bean
+    public Body body(){
+        return new Body();
+    }
+
+    @Bean
+    public Car car(Body body){
+        return new Car(body);
+    }
+
 }
